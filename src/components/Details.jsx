@@ -4,6 +4,7 @@ import fetchPet from "../FetchPet";
 
 const Details = () => {
   const { id } = useParams();
+  // cache key = details, if not in cache call fetchPets
   const results = useQuery(["details", id], fetchPet);
 
   if (results.isLoading) {
